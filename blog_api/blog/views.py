@@ -12,4 +12,7 @@ class ThemeAPIView(generics.ListAPIView):
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializers
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
 # Create your views here.
