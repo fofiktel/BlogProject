@@ -8,6 +8,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 
 from .serializers import UserSerializer, MyTokenObtainPairSerializer, ProfileSerializer, CountrySerializer,\
     RangSerializer
+
 from .permissions import IsOwnerOrReadOnly
 
 
@@ -35,6 +36,7 @@ class ProfileViewSet(viewsets.ModelViewSet):
 class CountryApiView(generics.ListAPIView):
     queryset = Country.objects.all()
     serializer_class = CountrySerializer
+
 
 
 class RangApiView(generics.ListAPIView):

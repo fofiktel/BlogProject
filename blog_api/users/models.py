@@ -70,6 +70,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, related_name='user', on_delete=models.CASCADE, primary_key=True)
     profile_image = models.ImageField(upload_to=create_path,
                                       default='images/profile_avatar/default_avatar.jpg')
+
     join_date = models.DateField(default=timezone.now)
     self_information = models.TextField(default='', blank=True)
     origin_country = models.ForeignKey(Country, related_name='origin_country', on_delete=models.PROTECT, null=True, blank=True)
